@@ -128,7 +128,7 @@ export default function Dashboard() {
               <div key={task._id} className="bg-white p-5 rounded-lg shadow-sm mb-4 border-l-4 border-blue-500">
                 <h3 className="font-bold mb-1">{task.title}</h3>
                 <p className="text-sm text-gray-500 mb-2">Project: {task.project?.title}</p>
-                {user?.role === 'ADMIN' && <p className="text-xs bg-gray-100 p-1 rounded inline-block mb-3">👤 {task.assignee?.name}</p>}
+                {user?.role?.toUpperCase() === 'ADMIN' && <p className="text-xs bg-gray-100 p-1 rounded inline-block mb-3">👤 {task.assignee?.name}</p>}
                 
                 <div className="flex gap-2 border-t pt-2 mt-2">
                   {status !== 'TODO' && <button onClick={() => updateStatus(task._id, 'TODO')} className="flex-1 text-xs bg-gray-100 py-2 rounded">⬅ Todo</button>}
